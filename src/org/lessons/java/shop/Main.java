@@ -1,14 +1,12 @@
 package org.lessons.java.shop;
 
-import java.util.Random;
-
 public class Main {
     public static void main(String[] args) {
-        int numberCode = 0; // Ottengo codice prodotto casuale
         String name = "Notebook Acer";
         String description = "Notebook con processore di ultima generazione e 32 gb di RAM.";
+        double VAT = 0.22; // IVA al 22%
         double price = 1099.99;
-        Product product1 = new Product(numberCode, name, description, price);
+        Product product1 = new Product(name, description, VAT, price);
 
         // stampo output caratteristiche prodotto
         System.out.println("Il prodotto che hai definito presenta le seguenti caratteristiche: ");

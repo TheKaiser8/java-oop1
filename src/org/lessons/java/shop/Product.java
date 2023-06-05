@@ -3,20 +3,19 @@ package org.lessons.java.shop;
 import java.util.Random;
 
 public class Product {
-    // CONSTANTS
-    public final double VAT = 0.2;
-
     // FIELDS
     private final int numberCode;
     private String name;
     private String description;
+    private double VAT;
     private double price;
 
     // CONSTRUCTOR
-    public Product(int numberCode, String name, String description, double price) {
+    public Product(String name, String description, double VAT, double price) {
         this.numberCode = randomNumberCode();
         this.name = name;
         this.description = description;
+        this.VAT = VAT;
         this.price = price;
     }
 
@@ -44,6 +43,15 @@ public class Product {
         this.description = description;
     }
 
+    // Getter for VAT
+    public double getVAT() {
+        return this.VAT;
+    }
+    // Setter for VAT
+    public void setVAT(double VAT) {
+        this.VAT = VAT;
+    }
+
     // Getter for price
     public double getPrice() {
         return this.price;
@@ -55,7 +63,7 @@ public class Product {
 
     // METHODS
     // Metodo per ottenere codice prodotto (numero casuale tra 1000 e 10000)
-    public static int randomNumberCode() {
+    private int randomNumberCode() {
         Random r = new Random();
         return r.nextInt(1000, 10000);
     }
