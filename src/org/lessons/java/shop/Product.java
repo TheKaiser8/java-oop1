@@ -45,7 +45,7 @@ public class Product {
 
     // Getter for VAT
     public double getVAT() {
-        return this.VAT;
+        return this.VAT * 100;
     }
     // Setter for VAT
     public void setVAT(double VAT) {
@@ -67,7 +67,13 @@ public class Product {
         Random r = new Random();
         return r.nextInt(1000, 10000);
     }
+
     public double getTotalPrice() {
         return this.price += this.price * VAT;
+    }
+
+    // Metodo per ottenere il nome esteso: codice + nome prodotto
+    public String getFullname() {
+        return this.numberCode + this.name;
     }
 }
